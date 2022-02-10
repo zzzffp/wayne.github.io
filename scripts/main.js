@@ -14,6 +14,7 @@ myImage.onclick = function() {
 // 获取新按钮和标题的引用
 let myButton = document.querySelector('button');
 let myHeading = document.querySelector('h1');
+let myHeadingText = 'Welcomt to here, '
 
 // 个性化欢迎信息设置函数
 function setUserName() {
@@ -22,7 +23,7 @@ function setUserName() {
     setUserName();
   } else {
     localStorage.setItem('name', myName);
-    myHeading.innerHTML = 'Mozilla 酷毙了，' + myName;
+    myHeading.innerHTML = myHeadingText + myName;
   }
 }
 
@@ -31,7 +32,7 @@ if (!localStorage.getItem('name')) {
   setUserName();
 } else {
   let storedName = localStorage.getItem('name');
-  myHeading.textContent = 'Mozilla 酷毙了，' + storedName;
+  myHeading.textContent = myHeadingText + storedName;
 }
 
 // 为按钮设置 onclick 事件处理器：
